@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+  h1 Add signal
+  .container.col-sm-4
+    form(method='POST' action='')
+      div.form-group
+        label.col-sm-2.control-label(for='currency') Currency:
+        .col-sm-10
+        input#currency.form-control(type='text', placeholder='currency' name='currency' value='')
+        
+        label.col-sm-2.control-label(for='input') Input:
+        .col-sm-10        
+        input#input.form-control(type='text', placeholder='input' name='input' value='')      
+        
+        label.col-sm-2.control-label(for='input') T1:
+        .col-sm-10
+        input#t1.form-control(type='text', placeholder='t1' name='t1' value='')     
+        
+        label.col-sm-2.control-label(for='t2') T2:
+        .col-sm-10
+        input#t2.form-control(type='text', placeholder='t2' name='t2' value='')     
+                
+        label.col-sm-2.control-label(for='t3') T3:
+        .col-sm-10
+        input#t3.form-control(type='text', placeholder='t3' name='t3' value='')   
+                
+        label.col-sm-2.control-label(for='stop') Stop:
+        .col-sm-10
+        input#stop.form-control(type='text', placeholder='stop' name='stop' value='')   
+
+        label.col-sm-2.control-label(for='active') Active:
+        .col-sm-10
+        input#active.form-control(type='checkbox'  name='active' checked)
+
+      button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

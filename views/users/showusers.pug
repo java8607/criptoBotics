@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  h1 show USER FORM!!!!
+  table.table.table-bordered.table-hover.table-condensed
+    thead
+      td name
+      td affiliation
+      td machineID
+      td password
+      td EDIT
+      td REMOVE
+    tbody
+      each user in users
+        tr
+          td #{user.name}
+          td #{user.affiliation}
+          td 
+            form.form-horizontal(method='POST' action='/resetmachineid/'+ user.name+'/'+user.affiliation)
+              .form-group-sm
+                .col-sm-8 #{user.machineID}
+                .col-sm-2
+                  button.btn.btn-default.btn-xs(type='submit' title="reset MachineID" ) 
+                    span.fa.fa-trash-o.fa-2x.pull-right.amber
+          td 
+            form.form-horizontal(method='POST' action='/resetpassword/'+ user.name+'/'+user.affiliation)
+              .form-group-sm
+                .col-sm-8 #{user.password}
+                .col-sm-2
+                  button.btn.btn-default.btn-xs(type='submit' title="reset password" ) 
+                    span.fa.fa-trash-o.fa-2x.pull-right.amber
+            //a(href='#' title="reset password")
+              
+          td 
+            a(href='user/'+user.name+'/'+user.affiliation title="Edit user data")
+              span.fa.fa-pencil.fa-2x.pull-center
+          td 
+            a(href='deleteuser/'+user.name+'/'+user.affiliation  title="Delete User")
+              span.fa.fa-trash-o.fa-2x.pull-center.red

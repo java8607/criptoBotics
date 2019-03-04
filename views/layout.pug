@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    include partials/bootstrap3.pug
+    //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    //script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='/css/style.css')
+
+  body
+    include partials/menu3.pug
+    .container-fluid
+      block content
+    include partials/footer
+    //script(src="/js/app.js")      

@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h1 show signal
+  table.table.table-bordered.table-hover.table-condensed
+    thead
+      td Currency
+      td Input
+      td T1
+      td T2
+      td T3
+      td Stop
+      td Active
+      td Actions
+    tbody
+      each signal in signals
+        tr
+          td #{signal.currency}
+          td #{signal.input}
+          td #{signal.t1}
+          td #{signal.t2}        
+          td #{signal.t3}
+          td #{signal.stop}
+          td #{signal.active}
+          td 
+            a(href='#' title="Edit signal data")
+              span.fa.fa-pencil.fa-2x.pull-center
+            a(href='deletesignal/'+signal.epoch  title="Delete Signal")
+              span.fa.fa-trash-o.fa-2x.pull-center.red

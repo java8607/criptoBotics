@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  h1 DELETE USER FORM
+  .container.col-sm-6
+    form.form-horizontal(method='POST' action='')
+      div.form-group
+        label.col-sm-2.control-label(for='name') name:
+        .col-sm-10
+          input#name.form-control.form-control-plaintext(type='text' name='name' value=(undefined===user ? '' : user.name) disabled)
+      div.form-group
+        label.col-sm-2.control-label(for='affiliation') affiliation:
+        .col-sm-10
+          input#affiliation.form-control.form-control-plaintext(type='text' name='affiliation' value=(undefined===user ? '' : user.affiliation) disabled)
+      div.form-group
+        label.col-sm-2.control-label(for='machineid') machineID:
+        .col-sm-10
+          input#machineid.form-control(type='text' name='machineid' disabled value=(undefined===user ? '' : user.machineID))
+      div.form-group
+        label.col-sm-2.control-label(for='password') password:
+        .col-sm-10
+          input#password.form-control(type='password', name='password' disabled value=(undefined===user ? '' : user.password))
+      div.form-group
+        input(type="hidden" name="_method" value="delete")
+      div.form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-primary(type='submit') Delete User
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

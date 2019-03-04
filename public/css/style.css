@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+  font-family: 'Lato', sans-serif;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+.mr8{
+  margin-right: 8px
+}
+
+.macondo {
+  font-family: 'Macondo', cursive;
+}
+
+.cryptoboticshead {
+  font-family: 'Macondo', cursive;
+  font-size: 25px;
+  padding-left: 25px;
+}
+
+.amber{
+  color: #ffbf00;
+}
+
+.red{
+  color: red;
+}
+.blue{
+  color: blue;
+}

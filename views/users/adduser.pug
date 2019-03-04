@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 ADD USER FORM!!!!
+  .container.col-sm-4
+    form(method='POST' action='')
+      div.form-group
+        label(for='name') name:
+        input#name.form-control(type='text', placeholder='nombre del usuario' name='name' value=(undefined===user ? '' : user.name))
+        label(for='name') affiliation:
+        select#affiliation.form-control(type='select', placeholder='Select author' name='affiliation' required='true' )
+          option cryptobotics.co
+          option forwintraders.com
+          option node-net.io
+
+      button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

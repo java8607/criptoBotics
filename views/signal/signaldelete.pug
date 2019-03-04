@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+  h1 DELETE USER FORM
+  .container.col-sm-6
+    form.form-horizontal(method='POST' action='')
+      div.form-group
+        label.col-sm-2.control-label(for='currency') Currency:
+        .col-sm-10
+          input#currency.form-control.form-control-plaintext(type='text' name='currency' value=(undefined===signal ? '' : signal.currency) disabled)
+      div.form-group
+        label.col-sm-2.control-label(for='input') Input:
+        .col-sm-10
+          input#input.form-control.form-control-plaintext(type='text' name='input' value=(undefined===signal ? '' : signal.input) disabled)
+      div.form-group
+        label.col-sm-2.control-label(for='t1') T1:
+        .col-sm-10
+          input#t1.form-control(type='text' name='t1' disabled value=(undefined===signal ? '' : signal.t1))
+      div.form-group
+        label.col-sm-2.control-label(for='t2') T2:
+        .col-sm-10
+          input#t2.form-control(type='text' name='t2' disabled value=(undefined===signal ? '' : signal.t2))
+      div.form-group
+        label.col-sm-2.control-label(for='t3') T3:
+        .col-sm-10
+          input#t3.form-control(type='text' name='t3' disabled value=(undefined===signal ? '' : signal.t3))
+      div.form-group
+        label.col-sm-2.control-label(for='stop') stop:
+        .col-sm-10
+          input#stop.form-control(type='text' name='stop' disabled value=(undefined===signal ? '' : signal.stop))
+
+
+      div.form-group
+        input(type="hidden" name="_method" value="delete")
+      div.form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-primary(type='submit') Delete Signal
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

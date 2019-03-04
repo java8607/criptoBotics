@@ -1,0 +1,72 @@
+nav#myNavbar.navbar.navbar-default(role='navigation')
+  // Brand and toggle get grouped for better mobile display
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-left(href='/' title="Cryptobotics")
+        img.mr8(src='/img/ICONx120-white.png' height='50px') 
+      a.navbar-brand.cryptoboticshead(href='/' title="Cryptobotics")
+        | Cryptobotics
+
+    // Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href='/') Home
+
+        li.dropdown
+          a.dropdown-toggle(href='#' data-toggle='dropdown' title="user management")
+            | Users 
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='/adduser') Add New User
+            li.disabled
+              a(href='#') Bla
+            li.divider
+            li
+              a(href='/showusers') List Users
+            
+        li
+          a(href='/api/'+apiversion) Api
+        
+        li.dropdown
+          a.dropdown-toggle(href='#' data-toggle='dropdown' title="signal form")
+            | Signals 
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='/addsignal') Add New Signal
+            li
+              a(href='/showsignal') Show All Signal
+      
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle(href='#' data-toggle='dropdown')
+            span.glyphicon.glyphicon-user.mr8 
+            b.caret
+          ul.dropdown-menu
+            li
+              a.theme-link(href='#') 
+                span.fa.fa-sign-in.fa-2x.mr8 
+                span Login
+            li
+              a.theme-link(href='#') 
+                span.fa.fa-sign-out.fa-2x.mr8 
+                span Logout
+            li.divider
+            li
+              a.theme-link(href='#') 
+                span.fa.fa-user.fa-2x.mr8 
+                span Profile
+            li.disabled
+              a.theme-link(href='#') 
+                span.fa.fa-rocket.fa-2x.mr8 
+                span Cyborg
+        li 
+          a #{version}
+    // /.navbar-collapse
